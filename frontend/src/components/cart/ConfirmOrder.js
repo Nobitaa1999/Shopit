@@ -79,7 +79,7 @@ const ConfirmOrder = () => {
                                         <Link to={`/product/${item.product}`}>{item.name}</Link>
                                     </div>
                                     <div className="col-4 col-lg-4 mt-4 mt-lg-0">
-                                        <p>{item.quantity} x ${item.price} = <b>${(item.quantity * item.price).toFixed(2)}</b></p>
+                                        <p>{item.quantity} x ₹{item.price} = <b>₹{(item.quantity * item.price).toFixed(2)}</b></p>
                                     </div>
                                 </div>
                             </div>
@@ -92,8 +92,8 @@ const ConfirmOrder = () => {
                     <div id="order_summary">
                         <h4>Order Summary</h4>
                         <hr />
-                        <p>Subtotal: <span className="order-summary-values">${itemsPrice}</span></p>
-                        <p>Shipping: <span className="order-summary-values">${shippingPrice}</span></p>
+                        <p>Subtotal: <span className="order-summary-values">₹{itemsPrice}</span></p>
+                        <p>Shipping: <span className="order-summary-values">₹{shippingPrice}</span></p>
                         
                         {loading ? (
                             <Loader />
@@ -106,7 +106,7 @@ const ConfirmOrder = () => {
                                 </div>
                             )
                         )}
-                        <p>Tax: <span className="order-summary-values">${taxPrice}</span></p>
+                        <p>Tax: <span className="order-summary-values">₹{taxPrice}</span></p>
                         <label htmlFor="coupon_code_field">Apply Coupon: </label>
                         <div className="input-group">
                             <input
@@ -121,7 +121,7 @@ const ConfirmOrder = () => {
                         {couponMessage && <div className="alert alert-info mt-2">{couponMessage}</div>} {/* Coupon message display */}
                         <hr />
                         
-                        <p>Total: <span className="order-summary-values">${totalPrice}</span></p>
+                        <p>Total: <span className="order-summary-values">₹{totalPrice}</span></p>
                         <hr />
                         <button id="checkout_btn" className="btn btn-primary btn-block" onClick={processToPayment}>
                             Proceed to Payment

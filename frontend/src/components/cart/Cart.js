@@ -79,7 +79,7 @@ const Cart = () => {
                                 <h4>Order Summary</h4>
                                 <hr />
                                 <p>Subtotal: <span className="order-summary-values">{subtotal} (Units)</span></p>
-                                <p>Est. total: <span className="order-summary-values">${estTotal}</span></p>
+                                <p>Est. total: <span className="order-summary-values">₹{estTotal}</span></p>
                               
                                 <hr />
                                 
